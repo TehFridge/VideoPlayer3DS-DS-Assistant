@@ -9,6 +9,8 @@ echo Checking if FFMPEG is present...
 where /q ffmpeg
 if ERRORLEVEL 1 (
     echo FFMPEG not found! Please install FFMPEG and try again.
+    echo Press any key to exit...
+    pause>nul
     exit /B
 ) else (
     echo FFMPEG found!
