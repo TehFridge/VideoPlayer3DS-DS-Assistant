@@ -1,10 +1,21 @@
 @echo off
 cls
 echo VideoPlayer3DS-DS-Assistant
-echo Version 1.0
-echo Press Space for Setup
-pause>nul
-goto setupmodel 
+echo Version 1.x
+goto checkFFMPEG 
+
+:checkFFMPEG
+echo Checking if FFMPEG is present...
+where /q ffmpeg
+if ERRORLEVEL 1 (
+    echo FFMPEG not found! Please install FFMPEG and try again.
+    exit /B
+) else (
+    echo FFMPEG found!
+    echo Press any key to continue...
+    pause>nul
+    goto setupmodel
+)
 
 :setupmodel
 set /p model="Which model do you Use? "
@@ -66,7 +77,6 @@ if %res%==480p goto vid480n
 
 :vid144
 echo Make sure the file is in the same folder as the program
-echo You need FFMPEG installed for this to work!!!
 echo Extensions Available:
 echo .mpg
 echo .mp2
@@ -88,7 +98,6 @@ goto 3dssetup
 
 :vid144n
 echo Make sure the file is in the same folder as the program
-echo You need FFMPEG installed for this to work!!!
 echo Extensions Available:
 echo .mpg
 echo .mp2
@@ -110,7 +119,6 @@ goto 3dssetup
 
 :vid240
 echo Make sure the file is in the same folder as the program
-echo You need FFMPEG installed for this to work!!!
 echo Extensions Available:
 echo .mpg
 echo .mp2
@@ -132,7 +140,6 @@ goto 3dssetup
 
 :vid240n
 echo Make sure the file is in the same folder as the program
-echo You need FFMPEG installed for this to work!!!
 echo Extensions Available:
 echo .mpg
 echo .mp2
@@ -154,7 +161,6 @@ goto 3dssetup
 
 :vid360
 echo Make sure the file is in the same folder as the program
-echo You need FFMPEG installed for this to work!!!
 echo Extensions Available:
 echo .mpg
 echo .mp2
@@ -176,7 +182,6 @@ goto 3dssetup
 
 :vid360n
 echo Make sure the file is in the same folder as the program
-echo You need FFMPEG installed for this to work!!!
 echo Extensions Available:
 echo .mpg
 echo .mp2
@@ -198,7 +203,6 @@ goto 3dssetup
 
 :vid460
 echo Make sure the file is in the same folder as the program
-echo You need FFMPEG installed for this to work!!!
 echo Extensions Available:
 echo .mpg
 echo .mp2
@@ -220,7 +224,6 @@ goto 3dssetup
 
 :vid460n
 echo Make sure the file is in the same folder as the program
-echo You need FFMPEG installed for this to work!!!
 echo Extensions Available:
 echo .mpg
 echo .mp2
@@ -242,7 +245,6 @@ goto 3dssetup
 
 :vid480
 echo Make sure the file is in the same folder as the program
-echo You need FFMPEG installed for this to work!!!
 echo Extensions Available:
 echo .mpg
 echo .mp2
@@ -264,7 +266,6 @@ goto 3dssetup
 
 :vid480n
 echo Make sure the file is in the same folder as the program
-echo You need FFMPEG installed for this to work!!!
 echo Extensions Available:
 echo .mpg
 echo .mp2
@@ -289,7 +290,6 @@ goto 3dssetup
 
 :setupds
 echo Make sure the file is in the same folder as the program
-echo You need FFMPEG installed for this to work!!!
 set /p input="InputFile:(example video.mp4) "
 set /p output="OutputFile:(example output.mp4) "
 goto convertitr
