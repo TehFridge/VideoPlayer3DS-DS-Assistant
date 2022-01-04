@@ -1,7 +1,7 @@
 @echo off
 cls
 echo VideoPlayer3DS-DS-Assistant
-echo Version 1.x
+echo Version 1.1
 goto checkFFMPEG 
 
 :checkFFMPEG
