@@ -65,7 +65,7 @@ echo Sound Codecs Available:
 echo aac - Advanced Audio Coding
 echo mp3 - MPEG Layer 3
 echo %sound% - Copies the Existing Codec 
-set /p sound="Select a sound codec (example: aac) :"
+set /p sound="Select a sound codec (example: aac) : "
 echo Resolutions Available:
 echo 144p - 256x144
 echo 240p - 426x240
